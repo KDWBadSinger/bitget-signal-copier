@@ -1,0 +1,499 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17212b;
+  background: #f4f6f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.shell {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.subtitle,
+.mutedText,
+.tileMeta,
+.tileLabel {
+  color: #66717d;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.errorBanner {
+  color: #8d1e22;
+  background: #fff0f0;
+  border: 1px solid #f4b7b7;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.statusTile,
+.panel {
+  border: 1px solid #dbe1dd;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(20, 30, 40, 0.05);
+}
+
+.statusTile {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-height: 112px;
+  padding: 16px;
+}
+
+.statusIcon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #edf2f0;
+  color: #36414c;
+  flex: 0 0 auto;
+}
+
+.statusTile.good .statusIcon {
+  background: #e8f6ec;
+  color: #177b47;
+}
+
+.statusTile.warn .statusIcon {
+  background: #fff5db;
+  color: #93620d;
+}
+
+.statusTile.danger .statusIcon {
+  background: #ffe9e9;
+  color: #b12b31;
+}
+
+.tileLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.tileValue {
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.tileMeta {
+  margin-top: 6px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.sideColumn {
+  display: grid;
+  gap: 16px;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.iconButton,
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  min-height: 38px;
+  white-space: nowrap;
+}
+
+.iconButton {
+  width: 40px;
+  height: 40px;
+  color: #24313d;
+  background: #ffffff;
+  border: 1px solid #d7ded9;
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: #176f5b;
+  padding: 0 14px;
+}
+
+.secondaryButton {
+  color: #26323c;
+  background: #edf2f0;
+  padding: 0 12px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field,
+.toggleField {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field > span,
+.toggleField > span:first-child {
+  color: #4c5965;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.field input,
+textarea {
+  width: 100%;
+  border: 1px solid #ccd6d0;
+  border-radius: 8px;
+  color: #14212d;
+  background: #fbfcfc;
+}
+
+.field input {
+  height: 40px;
+  padding: 0 11px;
+}
+
+.field input:focus,
+textarea:focus {
+  outline: 2px solid rgba(23, 111, 91, 0.18);
+  border-color: #176f5b;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.toggleField {
+  position: relative;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  min-height: 40px;
+  border: 1px solid #d6ded9;
+  border-radius: 8px;
+  padding: 9px 11px;
+  background: #fbfcfc;
+}
+
+.toggleField input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggleTrack {
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  background: #cdd6d1;
+  position: relative;
+}
+
+.toggleTrack::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.toggleField input:checked + .toggleTrack {
+  background: #176f5b;
+}
+
+.toggleField input:checked + .toggleTrack::after {
+  transform: translateX(18px);
+}
+
+.segmented {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 4px;
+  min-height: 40px;
+  border-radius: 8px;
+  padding: 4px;
+  background: #edf2f0;
+}
+
+.segmented button {
+  min-width: 0;
+  border-radius: 6px;
+  color: #54616c;
+  background: transparent;
+  padding: 0 8px;
+}
+
+.segmented button.active {
+  color: #13201c;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(20, 30, 40, 0.08);
+}
+
+.keyValues {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.keyValues div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #edf0ee;
+  padding-bottom: 9px;
+}
+
+.keyValues div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+dt {
+  color: #66717d;
+  font-size: 13px;
+}
+
+dd {
+  margin: 0;
+  color: #17212b;
+  font-weight: 650;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+textarea {
+  min-height: 158px;
+  resize: vertical;
+  padding: 12px;
+  line-height: 1.5;
+}
+
+.logsPanel {
+  margin-top: 16px;
+}
+
+.logs {
+  display: grid;
+  gap: 8px;
+}
+
+.logRow {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  border: 1px solid #e3e8e5;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfcfc;
+}
+
+.logRow.success {
+  border-color: #cbe7d5;
+}
+
+.logRow.warning {
+  border-color: #f2d898;
+}
+
+.logRow.error {
+  border-color: #f0b8b8;
+}
+
+.logIcon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: #56636e;
+  background: #edf2f0;
+}
+
+.logRow.success .logIcon {
+  color: #177b47;
+  background: #e8f6ec;
+}
+
+.logRow.warning .logIcon {
+  color: #93620d;
+  background: #fff5db;
+}
+
+.logRow.error .logIcon {
+  color: #b12b31;
+  background: #ffe9e9;
+}
+
+.logHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #596671;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.logContent p {
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+pre {
+  max-height: 240px;
+  overflow: auto;
+  border-radius: 8px;
+  background: #111820;
+  color: #dce8e2;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  color: #66717d;
+  border: 1px dashed #cdd6d1;
+  border-radius: 8px;
+}
+
+@media (max-width: 1040px) {
+  .statusGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 16px;
+  }
+
+  .statusGrid,
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .spanTwo {
+    grid-column: auto;
+  }
+
+  .panelHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+}
