@@ -2,6 +2,8 @@
 
 Telegram 信号监听器 + Bitget 合约自动下单控制台。
 
+后端使用 Python 标准库实现，前端使用 TypeScript + React。
+
 ## 功能
 
 - Telegram Bot 长轮询监听群组、频道或私聊信号
@@ -13,13 +15,17 @@ Telegram 信号监听器 + Bitget 合约自动下单控制台。
 - 前端控制台：状态、运行配置、手动测试信号、事件日志
 - 基础风控：允许交易对、名义价值上限、止损要求、重复信号过滤
 
-## 安装
+## 环境
+
+- Python 3.11+
+- Node.js 20+
+- pnpm
+
+后端没有第三方 Python 依赖；前端依赖通过 pnpm 安装：
 
 ```bash
 pnpm install
 ```
-
-如果本机没有 Node/npm，可以使用 Codex 桌面内置的 pnpm/Node。普通开发环境直接安装 Node.js 20+ 后执行上面的命令即可。
 
 ## 配置
 
@@ -77,6 +83,13 @@ pnpm start
 http://localhost:3000
 ```
 
+也可以单独启动：
+
+```bash
+pnpm dev:server
+pnpm dev:client
+```
+
 ## Telegram 接入
 
 1. 在 Telegram 找 `@BotFather` 创建 Bot，拿到 Token。
@@ -131,6 +144,8 @@ JSON 示例：
 pnpm check
 pnpm build
 ```
+
+`pnpm check` 会检查前端 TypeScript，并用 `python -m compileall` 编译检查 Python 后端。
 
 ## 注意
 
