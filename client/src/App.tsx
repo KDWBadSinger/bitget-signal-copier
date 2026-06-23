@@ -12,6 +12,7 @@ import {
   Square,
   XCircle
 } from "lucide-react";
+import React from "react";
 import { useEffect, useMemo, useState } from "react";
 
 type LogLevel = "info" | "success" | "warning" | "error";
